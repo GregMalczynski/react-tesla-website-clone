@@ -5,9 +5,11 @@ import NavBar from "../NavBar";
 
 const Home:React.FC = () => {
 
+    const navPos: string = 'fixed';
+
     return(
         <div>
-            <NavBar />
+            <NavBar navPos={navPos} />
             <Container>
                 {homepageData.map((data: any) => 
                     <div key={data.id}>

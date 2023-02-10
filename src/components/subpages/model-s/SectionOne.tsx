@@ -1,38 +1,75 @@
 import styled, { AnyStyledComponent } from "styled-components";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export interface DataTypes{
-    id: number,
-    title: string,
-    subtitle: string,
-    bgImage: string,
-    leftButton: string,
-    rightButton: string | null
-}
+const bgImage = '../../../../public/images/models/model-s-start.jfif'
 
-const Section:React.FC <DataTypes> = ({id, title, subtitle, bgImage, leftButton, rightButton}) => {
+const Section:React.FC = () => {
 
     return(
         <Wrapper backgroundImage={bgImage}>
             <TitleText>
-                <h1>{title}</h1>
-                <h2>{subtitle}</h2>
+                <h1>Model S</h1>
+                <h2>Plaid</h2>
             </TitleText>
+            <FadeBox>
                 <ButtonsGroup>
+                    <DataWrapper>
+                        <SectionData>
+                            <h3>396 mi</h3>
+                            <p>Range (EPA est.)</p>
+                        </SectionData>
+                        <SectionData>
+                            <h3>1.99 s</h3>
+                            <p>0-60 mph*</p>
+                        </SectionData>
+                        <SectionData>
+                            <h3>200 mph</h3>
+                            <p>Top Speed†</p>
+                        </SectionData>
+                        <SectionData>
+                            <h3>1,020 hp</h3>
+                            <p>Peak Power</p>
+                        </SectionData>
+                    </DataWrapper>
                     <Buttons>
                         <LeftButton>
-                            {leftButton}
+                            Order Now
                         </LeftButton>
-                            {rightButton ? <RightButton>{rightButton}</RightButton> : null}        
                     </Buttons>
-                    {id === 1 ? <ArrowWrapper><Arrow /></ArrowWrapper> : null}
                 </ButtonsGroup>
+                </FadeBox>
         </Wrapper>
     )
 }
   
 export default Section;
 
+const FadeBox = styled.div`
+    width: 100vw;
+    height: 200px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(0,212,255,0) 100%);
+    display: flex;
+    justify-content: center;
+`
+
+const DataWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 60px;
+
+    h3{
+        font-size: 2rem;
+        color: white;
+    }
+    p{
+        color: white;
+    }
+`
+const SectionData = styled.div`
+
+`
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -60,23 +97,21 @@ const Buttons = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 8vh;
-    gap: 20px;
+    margin-bottom: 12vh;
     @media (max-width: 768px) {
         flex-direction: column;
     }
 `
 const LeftButton = styled.div`
-    background-color: rgb(51, 51, 51);
     color: white;
     width: 250px;
     height: 35px;
     border-radius: 3px;
+    border: 3px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 13px;
-    opacity: 0.85;
     cursor: pointer;
     font-weight: 500;
 `
@@ -97,4 +132,7 @@ const Arrow = styled(ExpandMoreIcon)`
     animation: arrowAnimate infinite 1.5s;
 `
 const ButtonsGroup = styled.div`
+    display: flex;
+    margin-top: 8vh;
+    gap: 60px;
 `

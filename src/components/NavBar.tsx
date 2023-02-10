@@ -4,7 +4,16 @@ import LanguageIcon from '@mui/icons-material/Language';
 import CloseIcon from '@mui/icons-material/Close';
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-const NavBar:React.FC = () => {
+
+export interface NavProps{
+    navPos: string;
+}
+
+interface WrapperProps{
+    readonly navigationPosition: string;
+}
+
+const NavBar:React.FC <NavProps> = ({navPos}) => {
 
     const [ isNavMenu, setIsNavMenu ] = useState(false);
     const [ width, setWidth ] = useState(window.innerWidth)
@@ -26,7 +35,7 @@ const NavBar:React.FC = () => {
 
     return(
 
-        <Wrapper>
+        <Wrapper navigationPosition={navPos}>
             <i style={{maxWidth: "250px"}}>
                 <Link to='/'><img width="110px" src="./images/tesla-logo.png" alt="" /></Link>
             </i>
@@ -76,10 +85,10 @@ const NavBar:React.FC = () => {
   
 export default NavBar;
 
-const Wrapper = styled.div`
-    width: 100vw;
+const Wrapper = styled.div<WrapperProps>`
+    width: 100%;
     min-height: 60px;
-    position: fixed;
+    position: ${(props: any) => props.navigationPosition};
     display: flex;
     flex-direction: row;
     justify-content: space-between;
