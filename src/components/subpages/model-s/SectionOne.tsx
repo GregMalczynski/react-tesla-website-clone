@@ -114,11 +114,12 @@ const LeftButton = styled.div`
     font-size: 13px;
     cursor: pointer;
     font-weight: 500;
-`
-const RightButton = styled(LeftButton)`
-    background-color: white;
-    font-weight: 600;
-    color: black;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: white;
+        color: black;
+    }
 `
 const ArrowWrapper = styled.div`
     display: flex;

@@ -3,6 +3,9 @@ import SectionOne from "./SectionOne";
 import SectionTwo from "./SectionTwo";
 import SectionThree from "./SectionThree";
 import SectionFour from "./SectionFour";
+import SectionFive from "./SectionFive";
+import SectionSix from "./SectionSix";
+import SectionSeven from "./SectionSeven";
 import NavBar from "../../NavBar";
 
 const MainModelS:React.FC = () => {
@@ -16,6 +19,9 @@ const MainModelS:React.FC = () => {
             <SectionTwo />
             <SectionThree />
             <SectionFour />
+            <SectionFive />
+            <SectionSix />
+            <SectionSeven />
         </ProductWrapper>
     )
 }

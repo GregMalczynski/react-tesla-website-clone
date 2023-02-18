@@ -1,47 +1,31 @@
 import styled, { AnyStyledComponent } from "styled-components";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const bgImage = '../../../../public/images/models/model-s-blue.jfif'
+const bgImage = '../../../../public/images/models/model-s-red-blackbg-1.jfif'
 
 const Section:React.FC = () => {
 
     return(
         <Wrapper>
             <Image backgroundImage={bgImage}>
-                <ButtonsGroup>
-                    <DataWrapper>
-                        <SectionData>
-                            <h3>1,020 hp</h3>
-                            <p>Peak Power</p>
-                        </SectionData>
-                        <SectionData>
-                            <h3>9.23 s</h3>
-                            <p>@155 mph 1/4 mile</p>
-                        </SectionData>
-                        <SectionData>
-                            <h3>1.99 s</h3>
-                            <p>0-60 mph*</p>
-                        </SectionData>
-                    </DataWrapper>
-                </ButtonsGroup>
             </Image>
             <Content>
                 <LeftSection>
-                    <p>Plaid</p>
-                    <h2>Beyond Ludicrous</h2>
+                    <p>Exterior</p>
+                    <h2>Designed for Efficiency</h2>
                         <ButtonsWrapper>
                             <LeftButton>
                                 Order Now
                             </LeftButton>
                             <RightButton>
-                                Order Now
+                                View Inventory
                             </RightButton>
                         </ButtonsWrapper>
                 </LeftSection>
                 <RightSection>
-                    Model S Plaid has the quickest acceleration of any vehicle in production. 
-                    Updated battery architecture for all Model S trims enables back-to-back track runs without performance degradation. 
-                    <a href="#">Chat with a Tesla Advisor</a> to learn more about Model S or <a href="#">schedule a demo drive</a> today.
+                    <p>
+                    With a drag coefficient of just .208 Cd, the lowest on the planet, Model S is built for speed, endurance and range. 
+                    Improved aerodynamics and a wider chassis offer more responsive performance so you can take corners quicker and with more confidence.
+                    </p>
                 </RightSection>
             </Content>
         
@@ -72,6 +56,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: black;
     align-items: center;
     width: 100%;
     height: 100vh;
@@ -97,11 +82,11 @@ const Image = styled.div`
 
 `
 const LeftButton = styled.div`
-    color: black;
+    color: white;
     width: 250px;
     height: 35px;
     border-radius: 3px;
-    border: 3px solid black;
+    border: 3px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,21 +95,18 @@ const LeftButton = styled.div`
     font-weight: 500;
     transition: 0.3s;
     &:hover {
-        background-color: black;
-        color: white
+        background-color: white;
+        color: black
     }
 `
 const RightButton = styled(LeftButton)`
     background-color: white;
     font-weight: 600;
     color: black;
-`
-const ButtonsGroup = styled.div`
-    display: flex;
-    height: 100%;
-    align-items: end;
-    margin-bottom: 8vh;
-    bottom: 20px;
+    &:hover {
+        background-color: black;
+        color: white
+    }
 `
 const Content = styled.div`
     width: 1200px;
@@ -140,7 +122,10 @@ const LeftSection = styled.div`
     flex-direction: column;
     h2{
         font-size: 2rem;
-        color: black;
+        color: white;
+    }
+    p{
+        color: white;
     }
 `
 const ButtonsWrapper = styled.div`
@@ -153,8 +138,8 @@ const RightSection = styled.div`
     width: 700px;
     padding: 20px;
 
-    a{
-        text-decoration: underline;
+    p{
+        color: white;
     }
 
 `
