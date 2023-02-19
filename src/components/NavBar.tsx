@@ -43,7 +43,7 @@ const NavBar:React.FC <NavProps> = ({navPos}) => {
                 <Menu>
                     <p><Link to='/models'>Model S</Link></p>
                     <p><Link to='/'>Model 3</Link></p>
-                    <p><Link to='/'>Model X</Link></p>
+                    <p><Link to='/modelx'>Model X</Link></p>
                     <p><Link to='/'>Model Y</Link></p>
                     <p><Link to='/'>Solar Panels</Link></p>
                     <p><Link to='/'>Roof Panels</Link></p>
