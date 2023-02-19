@@ -6,6 +6,7 @@ import SectionFour from "./SectionFour";
 import SectionFive from "./SectionFive";
 import SectionSix from "./SectionSix";
 import SectionSeven from "./SectionSeven";
+import SectionBlueX from "./SectionBlueX";
 import NavBar from "../../NavBar";
 
 const MainModelX:React.FC = () => {
@@ -20,6 +21,7 @@ const MainModelX:React.FC = () => {
             <SectionThree />
             <SectionFour />
             <SectionFive />
+            <SectionBlueX />
             <SectionSix />
             <SectionSeven />
         </ProductWrapper>
